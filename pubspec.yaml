@@ -1,0 +1,25 @@
+name: flutter_weather_forecast
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  connectivity_plus: any
+  provider: any
+  http: any
+  shared_preferences: any
+  google_fonts: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
