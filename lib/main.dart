@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_weather_forecast/provider/animation_provider.dart';
 import 'package:flutter_weather_forecast/provider/home_provider.dart';
+import 'package:flutter_weather_forecast/screen/home%20screen/home_screen.dart';
 import 'package:flutter_weather_forecast/theme/theme_data.dart';
 import 'package:flutter_weather_forecast/theme/theme_provider.dart';
 import 'package:flutter_weather_forecast/utils/constant.dart';
@@ -27,6 +29,11 @@ Future<void> main() async {
         ChangeNotifierProvider(
           create: (context) => HomeProvider(),
         ),
+
+        // Animation
+        ChangeNotifierProvider(
+          create: (context) => AnimationProvider(),
+        ),
       ],
       builder: (context, child) => const WeatherApp(),
     ),
@@ -47,11 +54,7 @@ class WeatherApp extends StatelessWidget {
         darkTheme: WeatherThemeData.darkTheme,
         themeMode: theme.isDark ? ThemeMode.dark : ThemeMode.light,
         debugShowCheckedModeBanner: false,
-        home: const Scaffold(
-          body: Center(
-            child: Text('Hello World!'),
-          ),
-        ),
+        home: const HomeScreen(),
       ),
     );
   }
