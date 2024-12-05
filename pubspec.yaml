@@ -15,6 +15,8 @@ dependencies:
   http: any
   shared_preferences: any
   google_fonts: any
+  blurrycontainer: ^2.1.0
+  intl: any
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +28,4 @@ flutter:
   
   assets:
     - assets/gif/
+    - assets/images/weather/

@@ -76,7 +76,7 @@ class Current {
         lastUpdated: map['last_updated'] ?? " ",
         tempC: map['temp_c'].toDouble(),
         tempF: map['temp_f'].toDouble(),
-        isDay: map['isDay'] ?? 0,
+        isDay: map['is_day'] ?? 1,
         condition: Condition.fromJson(
           map['condition'],
         ),

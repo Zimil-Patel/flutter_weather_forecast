@@ -8,15 +8,13 @@ class AnimationProvider extends ChangeNotifier {
   void initAnimationController(TickerProvider vsync) {
     controller = AnimationController(
       vsync: vsync,
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 5),
     )..repeat(reverse: true);
 
     animation = CurvedAnimation(
       parent: controller!,
       curve: Curves.bounceInOut,
     );
-
-    notifyListeners();
   }
 
   @override

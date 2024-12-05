@@ -43,4 +43,8 @@ class ThemeProvider extends ChangeNotifier {
 
     notifyListeners();
   }
+
+  ThemeProvider() {
+    getThemePreference();
+  }
 }
