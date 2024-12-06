@@ -30,7 +30,6 @@ class HomeProvider extends ChangeNotifier {
 
   // Get Locations data
   Future<void> getLocations(String searchVal) async {
-    isLoading = true;
     String response =
         await ApiHelper.apiHelper.callApi(EndPoint.locationEndPoint(searchVal));
 
@@ -38,7 +37,6 @@ class HomeProvider extends ChangeNotifier {
       final data = jsonDecode(response);
       locationList = (data as List).map((e) => Location.fromJson(e)).toList();
       log("Got Locations List: $locationList");
-      isLoading = false;
       notifyListeners();
     }
   }
@@ -46,6 +44,7 @@ class HomeProvider extends ChangeNotifier {
   // Get Forecast data
   Future<void> getForecast(String city) async {
     isLoading = true;
+    notifyListeners();
     log("Default City: $defaultCity, City: $city");
     defaultCity = city;
     String response =

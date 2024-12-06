@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_forecast/provider/animation_provider.dart';
 import 'package:flutter_weather_forecast/screen/home%20screen/components/favouriteButton.dart';
@@ -17,20 +16,19 @@ class BounceWeatherImage extends StatefulWidget {
 
 class _BounceWeatherImageState extends State<BounceWeatherImage>
     with SingleTickerProviderStateMixin {
-  @override
-  void initState() {
-    super.initState();
+  late final AnimationProvider animationProvider;
 
-    final animationProvider =
-        Provider.of<AnimationProvider>(context, listen: false);
-    animationProvider.initAnimationController(this);
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    animationProvider = Provider.of<AnimationProvider>(context, listen: false);
+    animationProvider
+        .initAnimationController(this); // Initialize animation controller here
   }
 
   @override
   void dispose() {
-    final animationProvider =
-        Provider.of<AnimationProvider>(context, listen: false);
-    animationProvider.dispose();
+    animationProvider.dispose(); // Dispose of the animation controller
     super.dispose();
   }
 
@@ -42,15 +40,10 @@ class _BounceWeatherImageState extends State<BounceWeatherImage>
           const Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // ADD TO FAVOURITE
               FavouriteButton(),
-
-              // VIEW FAVOURITE CITIES
               ViewFavourtieCities(),
             ],
           ),
-
-          // IMAGE
           Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(

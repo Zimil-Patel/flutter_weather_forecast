@@ -12,6 +12,8 @@ class DailyForecast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = context.watch<HomeProvider>();
+
     return Column(
       children: [
         // forecast title
@@ -47,68 +49,65 @@ class DailyForecast extends StatelessWidget {
         ),
 
         // NETX 7 DAYS FORECAST
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Consumer<HomeProvider>(builder: (context, provider, child) {
-            return Row(
-              children: [
-                ...List.generate(
-                  6,
-                  (index) => Container(
-                    height: height * 0.16,
-                    width: width / 4,
-                    margin: const EdgeInsets.all(defPadding),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+        SizedBox(
+          width: width,
+          height: height * 0.2,
+          child: ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) => Container(
+              height: height * 0.16,
+              width: width / 4,
+              margin: const EdgeInsets.all(defPadding),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: BlurryContainer(
+                blur: 5,
+                color: Colors.black.withOpacity(0.4),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    // IMAGE ICON
+                    SizedBox(
+                      height: height * 0.06,
+                      width: height * 0.06,
+                      child: Image.network(
+                          "https:${provider.weatherModel!.forecast.forecastList[index].day.condition.icon}"),
                     ),
-                    child: BlurryContainer(
-                      blur: 5,
-                      color: Colors.black.withOpacity(0.4),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          // IMAGE ICON
-                          SizedBox(
-                            height: height * 0.06,
-                            width: height * 0.06,
-                            child: Image.network(
-                                "https:${provider.weatherModel!.forecast.forecastList[index].day.condition.icon}"),
-                          ),
 
-                          // DATE
-                          Text(
-                            getWeekday(provider.weatherModel!.forecast
-                                .forecastList[index].date),
-                            softWrap: true,
-                            style: TextStyle(
-                              fontSize: height * 0.017,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                            ),
-                          ),
-
-                          // TEMPRATURE
-                          Text(
-                            // ignore: prefer_interpolation_to_compose_strings
-                            provider.weatherModel!.forecast.forecastList[index]
-                                    .day.avgtempC
-                                    .toString() +
-                                " °",
-                            softWrap: true,
-                            style: TextStyle(
-                              fontSize: height * 0.021,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
-                            ),
-                          )
-                        ],
+                    // DATE
+                    Text(
+                      getWeekday(provider
+                          .weatherModel!.forecast.forecastList[index].date),
+                      softWrap: true,
+                      style: TextStyle(
+                        fontSize: height * 0.017,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
                       ),
                     ),
-                  ),
+
+                    // TEMPRATURE
+                    Text(
+                      // ignore: prefer_interpolation_to_compose_strings
+                      provider.weatherModel!.forecast.forecastList[index].day
+                              .avgtempC
+                              .toString() +
+                          " °",
+                      softWrap: true,
+                      style: TextStyle(
+                        fontSize: height * 0.021,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
                 ),
-              ],
-            );
-          }),
+              ),
+            ),
+            itemCount: 6,
+          ),
         ),
       ],
     );

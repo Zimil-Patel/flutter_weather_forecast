@@ -24,9 +24,9 @@ class SearchSuggestions extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40),
                 ),
                 child: BlurryContainer(
-                  blur: 5,
+                  blur: 1,
                   borderRadius: BorderRadius.circular(40),
-                  color: Colors.black.withOpacity(0.4),
+                  color: Colors.black.withOpacity(0.8),
                   child: Column(
                     children: [
                       ...List.generate(

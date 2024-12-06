@@ -3,7 +3,6 @@ import 'package:flutter_weather_forecast/provider/home_provider.dart';
 import 'package:flutter_weather_forecast/screen/home%20screen/components/bounce_weather_image.dart';
 import 'package:flutter_weather_forecast/screen/home%20screen/components/city_country.dart';
 import 'package:flutter_weather_forecast/screen/home%20screen/components/daily_forecast.dart';
-import 'package:flutter_weather_forecast/screen/home%20screen/components/favouriteButton.dart';
 import 'package:flutter_weather_forecast/screen/home%20screen/components/loading_effect.dart';
 import 'package:flutter_weather_forecast/screen/home%20screen/components/search_section.dart';
 import 'package:flutter_weather_forecast/screen/home%20screen/components/search_suggestions.dart';
@@ -22,6 +21,7 @@ class MainScreen extends StatelessWidget {
     return provider.isLoading
         ? const LoadingEffect()
         : Stack(
+            fit: StackFit.expand,
             children: [
               // Background GIF
               Positioned.fill(
@@ -45,14 +45,20 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
               // Foreground Column
-              SafeArea(
+              SingleChildScrollView(
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
                 child: Align(
                   alignment: Alignment.center,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       // SEARCH SECTION
-                      const SearchSection(),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).padding.top),
+                        child: const SearchSection(),
+                      ),
 
                       Stack(
                         children: [
@@ -74,8 +80,6 @@ class MainScreen extends StatelessWidget {
 
                               // TEMPRATURE
                               TempAndCondition(provider: provider),
-
-              
 
                               // WEATHER STATS WIND, HUMIDITY, CLOUD
                               WeatherStat(provider: provider),
