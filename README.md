@@ -28,13 +28,32 @@ A simple weather forecast app built with Flutter that allows users to get the la
 
 ## Screenshots
 
-### Light Theme
-
-![Light Theme](assets/screenshots/light-theme.png)
-
 ### Dark Theme
 
-![Dark Theme](assets/screenshots/dark-theme.png)
+<div align="left">
+   
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap1.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap2.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap3.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap4.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap5.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap6.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap7.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+   
+</div>
+
+### Light Theme
+
+<div align="left">
+   
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap8.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap9.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap10.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap11.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap12.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src= "https://github.com/Zimil-Patel/flutter_weather_forecast/blob/main/snaps/snap13.png" height = 590 width = 300> &nbsp;&nbsp;&nbsp;&nbsp;
+   
+</div>
 
 ## Video Walkthrough
 
