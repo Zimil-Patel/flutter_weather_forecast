@@ -1,7 +1,10 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_weather_forecast/provider/favourite_provider.dart';
+import 'package:flutter_weather_forecast/screen/favourite%20screen/favourite_screen.dart';
 import 'package:flutter_weather_forecast/utils/constant.dart';
+import 'package:provider/provider.dart';
 
 class ViewFavourtieCities extends StatelessWidget {
   const ViewFavourtieCities({
@@ -18,7 +21,15 @@ class ViewFavourtieCities extends StatelessWidget {
           Center(
             child: CupertinoButton(
               padding: EdgeInsets.zero,
-              onPressed: () {},
+              onPressed: () {
+                final favProvider = context.read<FavouriteProvider>();
+                favProvider.getLatestUpdate();
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FavouriteScreen()));
+              },
               child: BlurryContainer(
                 blur: 8,
                 borderRadius: BorderRadius.circular(100),

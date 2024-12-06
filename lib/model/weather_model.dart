@@ -26,6 +26,8 @@ class Current {
   final Condition condition;
   final double windMph,
       windKph,
+      visK,
+      visM,
       windDegree,
       humidity,
       cloud,
@@ -45,6 +47,8 @@ class Current {
   final String windDir;
 
   Current({
+    required this.visK,
+    required this.visM,
     required this.time,
     required this.windMph,
     required this.windKph,
@@ -100,6 +104,8 @@ class Current {
         precipMm: map['precip_mm'].toDouble(),
         precipIn: map['precip_in'].toDouble(),
         time: map['time'] ?? " ",
+        visK: map["vis_km"].toDouble(),
+        visM: map["vis_miles"].toDouble(),
       );
 }
 

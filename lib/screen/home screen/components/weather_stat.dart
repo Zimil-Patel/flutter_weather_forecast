@@ -2,6 +2,7 @@ import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_forecast/provider/home_provider.dart';
+import 'package:flutter_weather_forecast/screen/detail%20screen/detail_screen.dart';
 import 'package:flutter_weather_forecast/utils/constant.dart';
 
 class WeatherStat extends StatelessWidget {
@@ -35,7 +36,12 @@ class WeatherStat extends StatelessWidget {
           // VIEW DETAILS
           CupertinoButton(
             padding: EdgeInsets.zero,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const DetailScreen()));
+            },
             child: BlurryContainer(
               blur: 8,
               borderRadius: BorderRadius.circular(100),

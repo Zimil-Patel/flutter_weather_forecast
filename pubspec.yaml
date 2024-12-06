@@ -29,3 +29,4 @@ flutter:
   assets:
     - assets/gif/
     - assets/images/weather/
+    - assets/images/condition/

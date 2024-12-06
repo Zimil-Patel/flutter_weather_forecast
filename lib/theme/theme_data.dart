@@ -7,9 +7,9 @@ class WeatherThemeData {
     brightness: Brightness.light,
     primarySwatch: Colors.blue,
     dialogBackgroundColor: Colors.white,
-    scaffoldBackgroundColor: const Color(0xfff9faff),
+    scaffoldBackgroundColor: Colors.white,
     colorScheme: const ColorScheme.light(
-      onSurface: Colors.white,
+      onSurface: Color.fromARGB(189, 237, 238, 241),
     ),
     textTheme: TextTheme(
       titleLarge: GoogleFonts.varelaRound(
@@ -27,7 +27,8 @@ class WeatherThemeData {
       bodyLarge: GoogleFonts.varelaRound(color: Colors.black),
     ),
     radioTheme: RadioThemeData(
-        fillColor: MaterialStateColor.resolveWith((states) => Colors.blue)),
+      fillColor: MaterialStateColor.resolveWith((states) => Colors.blue),
+    ),
   );
 
   static final ThemeData darkTheme = ThemeData(

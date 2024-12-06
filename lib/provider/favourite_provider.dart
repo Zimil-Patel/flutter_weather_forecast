@@ -11,6 +11,13 @@ class FavouriteProvider extends ChangeNotifier {
   List<String> cityList = [];
   bool favLoading = false;
   bool isFav = false;
+  bool isEditing = false;
+
+  // TOGGLE EDITING
+  void toggleEditing() {
+    isEditing = !isEditing;
+    notifyListeners();
+  }
 
   // CHECK IF GIVEN CITY IS FAVOURITE
   void checkIfContain(String city) {
