@@ -61,7 +61,9 @@ class FavouriteProvider extends ChangeNotifier {
         final data = jsonDecode(response);
         WeatherModel weatherModel = WeatherModel.formJson(data);
         log("Got Forecast: ${weatherModel.location.name}");
-        weatherList.add(weatherModel);
+        if (!weatherList.any((weather) => weather.location.name == city)) {
+          weatherList.add(weatherModel);
+        }
       }
     }
     favLoading = false;
