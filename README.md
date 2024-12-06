@@ -1,5 +1,5 @@
 
-# Weather Forecast App (gflutter)
+# Weather Forecast App
 
 A simple weather forecast app built with Flutter that allows users to get the latest weather information for their desired location. The app includes features such as city search, light and dark themes, favorites list, and more.
 
